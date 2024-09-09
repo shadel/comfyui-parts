@@ -1,0 +1,1669 @@
+{
+    "1": {
+      "inputs": {
+        "image": "289410378_5073308092723469_3518704833184685515_n.jpg",
+        "upload": "image"
+      },
+      "class_type": "LoadImage",
+      "_meta": {
+        "title": "Load Image"
+      }
+    },
+    "3": {
+      "inputs": {
+        "width": [
+          "636",
+          0
+        ],
+        "height": [
+          "636",
+          1
+        ],
+        "upscale_factor": 2
+      },
+      "class_type": "CR Image Size",
+      "_meta": {
+        "title": "CR Image Size (Legacy)"
+      }
+    },
+    "6": {
+      "inputs": {
+        "images": [
+          "484",
+          0
+        ]
+      },
+      "class_type": "PreviewImage",
+      "_meta": {
+        "title": "Preview Image"
+      }
+    },
+    "7": {
+      "inputs": {
+        "invert_mask": false,
+        "blend_mode": "normal",
+        "opacity": 100,
+        "x_percent": [
+          "9",
+          0
+        ],
+        "y_percent": [
+          "10",
+          0
+        ],
+        "mirror": "None",
+        "scale": [
+          "11",
+          0
+        ],
+        "aspect_ratio": 1,
+        "rotate": 0,
+        "transform_method": "lanczos",
+        "anti_aliasing": 0,
+        "background_image": [
+          "8",
+          0
+        ],
+        "layer_image": [
+          "583",
+          0
+        ]
+      },
+      "class_type": "LayerUtility: ImageBlendAdvance V2",
+      "_meta": {
+        "title": "LayerUtility: ImageBlendAdvance V2"
+      }
+    },
+    "8": {
+      "inputs": {
+        "width": [
+          "3",
+          0
+        ],
+        "height": [
+          "3",
+          1
+        ],
+        "red": 125,
+        "green": 125,
+        "blue": 125
+      },
+      "class_type": "Image Blank",
+      "_meta": {
+        "title": "Image Blank"
+      }
+    },
+    "9": {
+      "inputs": {
+        "number": 52.099000000000004,
+        "min_value": 0,
+        "max_value": 100,
+        "step": 0.001
+      },
+      "class_type": "FloatSlider",
+      "_meta": {
+        "title": "x_percent"
+      }
+    },
+    "10": {
+      "inputs": {
+        "number": 49.227000000000004,
+        "min_value": 0,
+        "max_value": 100,
+        "step": 0.001
+      },
+      "class_type": "FloatSlider",
+      "_meta": {
+        "title": "y_percent"
+      }
+    },
+    "11": {
+      "inputs": {
+        "number": 0.624,
+        "min_value": 0,
+        "max_value": 1,
+        "step": 0.001
+      },
+      "class_type": "FloatSlider",
+      "_meta": {
+        "title": "scale"
+      }
+    },
+    "124": {
+      "inputs": {
+        "ckpt_name": "SD1.5/epicrealism_naturalSinRC1VAE.safetensors"
+      },
+      "class_type": "CheckpointLoaderSimple",
+      "_meta": {
+        "title": "Load Checkpoint"
+      }
+    },
+    "125": {
+      "inputs": {
+        "model_path": "iclight_sd15_fc.safetensors",
+        "model": [
+          "124",
+          0
+        ]
+      },
+      "class_type": "LoadAndApplyICLightUnet",
+      "_meta": {
+        "title": "Load And Apply IC-Light"
+      }
+    },
+    "127": {
+      "inputs": {
+        "multiplier": 0.15,
+        "positive": [
+          "128",
+          0
+        ],
+        "negative": [
+          "129",
+          0
+        ],
+        "vae": [
+          "124",
+          2
+        ],
+        "foreground": [
+          "138",
+          0
+        ]
+      },
+      "class_type": "ICLightConditioning",
+      "_meta": {
+        "title": "IC-Light Conditioning"
+      }
+    },
+    "128": {
+      "inputs": {
+        "text": [
+          "621",
+          0
+        ],
+        "clip": [
+          "124",
+          1
+        ]
+      },
+      "class_type": "CLIPTextEncode",
+      "_meta": {
+        "title": "CLIP Text Encode (Prompt)"
+      }
+    },
+    "129": {
+      "inputs": {
+        "text": "",
+        "clip": [
+          "124",
+          1
+        ]
+      },
+      "class_type": "CLIPTextEncode",
+      "_meta": {
+        "title": "CLIP Text Encode (Prompt)"
+      }
+    },
+    "138": {
+      "inputs": {
+        "pixels": [
+          "354",
+          0
+        ],
+        "vae": [
+          "124",
+          2
+        ]
+      },
+      "class_type": "VAEEncode",
+      "_meta": {
+        "title": "VAE Encode"
+      }
+    },
+    "139": {
+      "inputs": {
+        "seed": 593225404882168,
+        "steps": 40,
+        "cfg": 3,
+        "sampler_name": "dpmpp_2m_sde",
+        "scheduler": "karras",
+        "denoise": 1,
+        "model": [
+          "125",
+          0
+        ],
+        "positive": [
+          "127",
+          0
+        ],
+        "negative": [
+          "127",
+          1
+        ],
+        "latent_image": [
+          "140",
+          0
+        ]
+      },
+      "class_type": "KSampler",
+      "_meta": {
+        "title": "KSampler"
+      }
+    },
+    "140": {
+      "inputs": {
+        "pixels": [
+          "521",
+          0
+        ],
+        "vae": [
+          "124",
+          2
+        ]
+      },
+      "class_type": "VAEEncode",
+      "_meta": {
+        "title": "VAE Encode"
+      }
+    },
+    "141": {
+      "inputs": {
+        "samples": [
+          "139",
+          0
+        ],
+        "vae": [
+          "124",
+          2
+        ]
+      },
+      "class_type": "VAEDecode",
+      "_meta": {
+        "title": "VAE Decode"
+      }
+    },
+    "142": {
+      "inputs": {
+        "images": [
+          "141",
+          0
+        ]
+      },
+      "class_type": "PreviewImage",
+      "_meta": {
+        "title": "Preview Image"
+      }
+    },
+    "143": {
+      "inputs": {
+        "mode": "Luminosity",
+        "blend_image": [
+          "141",
+          0
+        ],
+        "base_image": [
+          "354",
+          0
+        ]
+      },
+      "class_type": "Color Blend",
+      "_meta": {
+        "title": "Color Blend"
+      }
+    },
+    "159": {
+      "inputs": {
+        "strength": 30,
+        "brightness": 50,
+        "contrast": 50,
+        "saturation": 0,
+        "red": 0,
+        "green": 0,
+        "blue": 0,
+        "mode": "RGB",
+        "image": [
+          "143",
+          0
+        ]
+      },
+      "class_type": "LayerColor: AutoAdjustV2",
+      "_meta": {
+        "title": "LayerColor: AutoAdjust V2"
+      }
+    },
+    "161": {
+      "inputs": {
+        "mode": "soft_light",
+        "blur_sigma": 5,
+        "blend_factor": 1,
+        "target": [
+          "336",
+          0
+        ],
+        "source": [
+          "354",
+          0
+        ],
+        "mask": [
+          "236",
+          0
+        ]
+      },
+      "class_type": "DetailTransfer",
+      "_meta": {
+        "title": "Detail Transfer"
+      }
+    },
+    "164": {
+      "inputs": {
+        "images": [
+          "161",
+          0
+        ]
+      },
+      "class_type": "PreviewImage",
+      "_meta": {
+        "title": "Preview Image"
+      }
+    },
+    "172": {
+      "inputs": {
+        "images": [
+          "7",
+          0
+        ]
+      },
+      "class_type": "PreviewImage",
+      "_meta": {
+        "title": "Preview Image"
+      }
+    },
+    "193": {
+      "inputs": {
+        "mode": "add",
+        "blur_type": "blur",
+        "blur_size": 5,
+        "factor": 1,
+        "images": [
+          "336",
+          0
+        ],
+        "detail": [
+          "161",
+          0
+        ]
+      },
+      "class_type": "RestoreDetail",
+      "_meta": {
+        "title": "Restore Detail"
+      }
+    },
+    "194": {
+      "inputs": {
+        "images": [
+          "193",
+          0
+        ]
+      },
+      "class_type": "PreviewImage",
+      "_meta": {
+        "title": "Preview Image"
+      }
+    },
+    "195": {
+      "inputs": {
+        "blend_percentage": 0.8,
+        "image_a": [
+          "193",
+          0
+        ],
+        "image_b": [
+          "161",
+          0
+        ]
+      },
+      "class_type": "Image Blend",
+      "_meta": {
+        "title": "Image Blend"
+      }
+    },
+    "236": {
+      "inputs": {
+        "invert_mask": false,
+        "grow": -1,
+        "blur": 1,
+        "mask": [
+          "7",
+          1
+        ]
+      },
+      "class_type": "LayerMask: MaskGrow",
+      "_meta": {
+        "title": "LayerMask: MaskGrow"
+      }
+    },
+    "237": {
+      "inputs": {
+        "mask": [
+          "236",
+          0
+        ]
+      },
+      "class_type": "MaskPreview+",
+      "_meta": {
+        "title": "🔧 Mask Preview"
+      }
+    },
+    "238": {
+      "inputs": {
+        "rgthree_comparer": {
+          "images": [
+            {
+              "name": "A",
+              "selected": true,
+              "url": "/api/view?filename=rgthree.compare._temp_ybnik_00005_.png&type=temp&subfolder=&rand=0.4836813728765508"
+            },
+            {
+              "name": "B",
+              "selected": true,
+              "url": "/api/view?filename=rgthree.compare._temp_ybnik_00006_.png&type=temp&subfolder=&rand=0.696594332820843"
+            }
+          ]
+        },
+        "image_a": [
+          "195",
+          0
+        ],
+        "image_b": [
+          "7",
+          0
+        ]
+      },
+      "class_type": "Image Comparer (rgthree)",
+      "_meta": {
+        "title": "Image Comparer (rgthree)"
+      }
+    },
+    "284": {
+      "inputs": {
+        "ckpt_name": "SDXL/dreamshaperXL_v21TurboDPMSDE.safetensors"
+      },
+      "class_type": "CheckpointLoaderSimple",
+      "_meta": {
+        "title": "Load Checkpoint"
+      }
+    },
+    "286": {
+      "inputs": {
+        "text": [
+          "621",
+          0
+        ],
+        "clip": [
+          "284",
+          1
+        ]
+      },
+      "class_type": "CLIPTextEncode",
+      "_meta": {
+        "title": "CLIP Text Encode (Prompt)"
+      }
+    },
+    "287": {
+      "inputs": {
+        "text": "",
+        "clip": [
+          "284",
+          1
+        ]
+      },
+      "class_type": "CLIPTextEncode",
+      "_meta": {
+        "title": "CLIP Text Encode (Prompt)"
+      }
+    },
+    "289": {
+      "inputs": {
+        "samples": [
+          "308",
+          0
+        ],
+        "vae": [
+          "284",
+          2
+        ]
+      },
+      "class_type": "VAEDecode",
+      "_meta": {
+        "title": "VAE Decode"
+      }
+    },
+    "306": {
+      "inputs": {
+        "images": [
+          "143",
+          0
+        ]
+      },
+      "class_type": "PreviewImage",
+      "_meta": {
+        "title": "Preview Image"
+      }
+    },
+    "308": {
+      "inputs": {
+        "seed": 343341595701701,
+        "steps": 3,
+        "cfg": 2,
+        "sampler_name": "dpmpp_sde",
+        "scheduler": "karras",
+        "denoise": 0.5,
+        "model": [
+          "284",
+          0
+        ],
+        "positive": [
+          "475",
+          0
+        ],
+        "negative": [
+          "475",
+          1
+        ],
+        "latent_image": [
+          "474",
+          0
+        ]
+      },
+      "class_type": "KSampler",
+      "_meta": {
+        "title": "KSampler"
+      }
+    },
+    "310": {
+      "inputs": {
+        "rgthree_comparer": {
+          "images": [
+            {
+              "name": "A",
+              "selected": true,
+              "url": "/api/view?filename=rgthree.compare._temp_evqkt_00005_.png&type=temp&subfolder=&rand=0.048515461574991425"
+            },
+            {
+              "name": "B",
+              "selected": true,
+              "url": "/api/view?filename=rgthree.compare._temp_evqkt_00006_.png&type=temp&subfolder=&rand=0.6037479791784213"
+            }
+          ]
+        },
+        "image_a": [
+          "579",
+          0
+        ],
+        "image_b": [
+          "441",
+          0
+        ]
+      },
+      "class_type": "Image Comparer (rgthree)",
+      "_meta": {
+        "title": "Image Comparer (rgthree)"
+      }
+    },
+    "336": {
+      "inputs": {
+        "Input": 1,
+        "image1": [
+          "579",
+          0
+        ],
+        "image2": [
+          "566",
+          0
+        ]
+      },
+      "class_type": "CR Image Input Switch",
+      "_meta": {
+        "title": "🔀 CR Image Input Switch"
+      }
+    },
+    "339": {
+      "inputs": {
+        "mask": [
+          "341",
+          0
+        ]
+      },
+      "class_type": "MaskPreview+",
+      "_meta": {
+        "title": "🔧 Mask Preview"
+      }
+    },
+    "341": {
+      "inputs": {
+        "invert_mask": false,
+        "grow": 1,
+        "blur": 1,
+        "mask": [
+          "508",
+          0
+        ]
+      },
+      "class_type": "LayerMask: MaskGrow",
+      "_meta": {
+        "title": "LayerMask: MaskGrow"
+      }
+    },
+    "348": {
+      "inputs": {
+        "vae_name": "FLUX1/ae.sft"
+      },
+      "class_type": "VAELoader",
+      "_meta": {
+        "title": "Load VAE"
+      }
+    },
+    "353": {
+      "inputs": {
+        "images": [
+          "577",
+          0
+        ]
+      },
+      "class_type": "PreviewImage",
+      "_meta": {
+        "title": "Preview Image"
+      }
+    },
+    "354": {
+      "inputs": {
+        "x": 0,
+        "y": 0,
+        "resize_source": false,
+        "destination": [
+          "577",
+          0
+        ],
+        "source": [
+          "7",
+          0
+        ],
+        "mask": [
+          "236",
+          0
+        ]
+      },
+      "class_type": "ImageCompositeMasked",
+      "_meta": {
+        "title": "ImageCompositeMasked"
+      }
+    },
+    "355": {
+      "inputs": {
+        "text": "realistic photograph of a woman in a leather jacket sitting on the motorcycle, leaning slightly forward with her right foot on the ground and her left foot resting on the motorcycle's footrest, in the middle of a bright, reflective salt flat, the endless horizon stretching into a blue sky, sunlight reflecting off the water’s thin layer creating a mirrored effect, clouds perfectly mirrored on the ground, hd quality, natural look, high contrast, surreal and expansive landscape"
+      },
+      "class_type": "CR Text",
+      "_meta": {
+        "title": "🔤 CR Text"
+      }
+    },
+    "356": {
+      "inputs": {
+        "channel": "green",
+        "image": [
+          "354",
+          0
+        ]
+      },
+      "class_type": "Image Select Channel",
+      "_meta": {
+        "title": "Image Select Channel"
+      }
+    },
+    "359": {
+      "inputs": {
+        "images": [
+          "356",
+          0
+        ]
+      },
+      "class_type": "PreviewImage",
+      "_meta": {
+        "title": "Preview Image"
+      }
+    },
+    "375": {
+      "inputs": {
+        "low_threshold": 0,
+        "high_threshold": 100,
+        "resolution": 1024,
+        "image": [
+          "7",
+          0
+        ]
+      },
+      "class_type": "CannyEdgePreprocessor",
+      "_meta": {
+        "title": "Canny Edge"
+      }
+    },
+    "376": {
+      "inputs": {
+        "images": [
+          "645",
+          0
+        ]
+      },
+      "class_type": "PreviewImage",
+      "_meta": {
+        "title": "Preview Image"
+      }
+    },
+    "383": {
+      "inputs": {
+        "unet_name": "FLUX1/flux1-dev.safetensors",
+        "weight_dtype": "fp8_e4m3fn"
+      },
+      "class_type": "UNETLoader",
+      "_meta": {
+        "title": "Load Diffusion Model"
+      }
+    },
+    "384": {
+      "inputs": {
+        "clip_name1": "clip_l.safetensors",
+        "clip_name2": "t5xxl_fp8_e4m3fn.safetensors",
+        "type": "flux"
+      },
+      "class_type": "DualCLIPLoader",
+      "_meta": {
+        "title": "DualCLIPLoader"
+      }
+    },
+    "393": {
+      "inputs": {
+        "samples": [
+          "478",
+          0
+        ],
+        "vae": [
+          "348",
+          0
+        ]
+      },
+      "class_type": "VAEDecode",
+      "_meta": {
+        "title": "VAE Decode"
+      }
+    },
+    "428": {
+      "inputs": {
+        "pixels": [
+          "7",
+          0
+        ],
+        "vae": [
+          "348",
+          0
+        ]
+      },
+      "class_type": "VAEEncode",
+      "_meta": {
+        "title": "VAE Encode"
+      }
+    },
+    "434": {
+      "inputs": {
+        "control_net_name": "SDXL/controlnet-canny-sdxl-1.0.safetensors"
+      },
+      "class_type": "ControlNetLoader",
+      "_meta": {
+        "title": "Load ControlNet Model"
+      }
+    },
+    "439": {
+      "inputs": {
+        "images": [
+          "473",
+          0
+        ]
+      },
+      "class_type": "PreviewImage",
+      "_meta": {
+        "title": "Preview Image"
+      }
+    },
+    "441": {
+      "inputs": {
+        "Input": 2,
+        "image1": [
+          "615",
+          0
+        ],
+        "image2": [
+          "566",
+          0
+        ]
+      },
+      "class_type": "CR Image Input Switch",
+      "_meta": {
+        "title": "🔀 CR Image Input Switch"
+      }
+    },
+    "473": {
+      "inputs": {
+        "low_threshold": 50,
+        "high_threshold": 100,
+        "resolution": 1024,
+        "image": [
+          "441",
+          0
+        ]
+      },
+      "class_type": "CannyEdgePreprocessor",
+      "_meta": {
+        "title": "Canny Edge"
+      }
+    },
+    "474": {
+      "inputs": {
+        "pixels": [
+          "441",
+          0
+        ],
+        "vae": [
+          "284",
+          2
+        ]
+      },
+      "class_type": "VAEEncode",
+      "_meta": {
+        "title": "VAE Encode"
+      }
+    },
+    "475": {
+      "inputs": {
+        "strength": 1,
+        "start_percent": 0,
+        "end_percent": 1,
+        "positive": [
+          "286",
+          0
+        ],
+        "negative": [
+          "287",
+          0
+        ],
+        "control_net": [
+          "434",
+          0
+        ],
+        "image": [
+          "473",
+          0
+        ]
+      },
+      "class_type": "ControlNetApplyAdvanced",
+      "_meta": {
+        "title": "Apply ControlNet (Advanced)"
+      }
+    },
+    "478": {
+      "inputs": {
+        "noise_seed": 1114625535091147,
+        "steps": 25,
+        "timestep_to_start_cfg": 1,
+        "true_gs": 3.5,
+        "image_to_image_strength": 1,
+        "denoise_strength": 1,
+        "model": [
+          "649",
+          0
+        ],
+        "conditioning": [
+          "482",
+          0
+        ],
+        "neg_conditioning": [
+          "483",
+          0
+        ],
+        "latent_image": [
+          "428",
+          0
+        ],
+        "controlnet_condition": [
+          "479",
+          0
+        ]
+      },
+      "class_type": "XlabsSampler",
+      "_meta": {
+        "title": "Xlabs Sampler"
+      }
+    },
+    "479": {
+      "inputs": {
+        "strength": 0.6,
+        "controlnet": [
+          "480",
+          0
+        ],
+        "image": [
+          "645",
+          0
+        ]
+      },
+      "class_type": "ApplyFluxControlNet",
+      "_meta": {
+        "title": "Apply Flux ControlNet"
+      }
+    },
+    "480": {
+      "inputs": {
+        "model_name": "flux-dev-fp8",
+        "controlnet_path": "flux-depth-controlnet-v3.safetensors"
+      },
+      "class_type": "LoadFluxControlNet",
+      "_meta": {
+        "title": "Load Flux ControlNet"
+      }
+    },
+    "481": {
+      "inputs": {
+        "width": [
+          "3",
+          0
+        ],
+        "height": [
+          "3",
+          1
+        ],
+        "batch_size": 1
+      },
+      "class_type": "EmptyLatentImage",
+      "_meta": {
+        "title": "Empty Latent Image"
+      }
+    },
+    "482": {
+      "inputs": {
+        "clip_l": [
+          "621",
+          0
+        ],
+        "t5xxl": [
+          "621",
+          0
+        ],
+        "guidance": 4,
+        "clip": [
+          "649",
+          1
+        ]
+      },
+      "class_type": "CLIPTextEncodeFlux",
+      "_meta": {
+        "title": "CLIPTextEncodeFlux"
+      }
+    },
+    "483": {
+      "inputs": {
+        "clip_l": "",
+        "t5xxl": "",
+        "guidance": 4,
+        "clip": [
+          "649",
+          1
+        ]
+      },
+      "class_type": "CLIPTextEncodeFlux",
+      "_meta": {
+        "title": "CLIPTextEncodeFlux"
+      }
+    },
+    "484": {
+      "inputs": {
+        "exposure": 5,
+        "image": [
+          "583",
+          0
+        ]
+      },
+      "class_type": "LayerColor: Exposure",
+      "_meta": {
+        "title": "LayerColor: Exposure"
+      }
+    },
+    "485": {
+      "inputs": {
+        "rgthree_comparer": {
+          "images": [
+            {
+              "name": "A",
+              "selected": true,
+              "url": "/api/view?filename=rgthree.compare._temp_rvkgc_00005_.png&type=temp&subfolder=&rand=0.041734458309030664"
+            },
+            {
+              "name": "B",
+              "selected": true,
+              "url": "/api/view?filename=rgthree.compare._temp_rvkgc_00006_.png&type=temp&subfolder=&rand=0.6674892843499163"
+            }
+          ]
+        },
+        "image_a": [
+          "566",
+          0
+        ],
+        "image_b": [
+          "354",
+          0
+        ]
+      },
+      "class_type": "Image Comparer (rgthree)",
+      "_meta": {
+        "title": "Image Comparer (rgthree)"
+      }
+    },
+    "492": {
+      "inputs": {
+        "masks_a": [
+          "236",
+          0
+        ],
+        "masks_b": [
+          "498",
+          1
+        ]
+      },
+      "class_type": "Masks Add",
+      "_meta": {
+        "title": "Masks Add"
+      }
+    },
+    "498": {
+      "inputs": {
+        "threshold": 0.5,
+        "torchscript_jit": "on",
+        "image": [
+          "393",
+          0
+        ]
+      },
+      "class_type": "InspyrenetRembgAdvanced",
+      "_meta": {
+        "title": "Inspyrenet Rembg Advanced"
+      }
+    },
+    "508": {
+      "inputs": {
+        "select": 1,
+        "sel_mode": false,
+        "input1": [
+          "492",
+          0
+        ],
+        "input2": [
+          "236",
+          0
+        ]
+      },
+      "class_type": "ImpactSwitch",
+      "_meta": {
+        "title": "Switch (Any)"
+      }
+    },
+    "521": {
+      "inputs": {
+        "brightness": 1.5,
+        "contrast": 1.5,
+        "saturation": 1,
+        "image": [
+          "356",
+          0
+        ]
+      },
+      "class_type": "LayerColor: Brightness & Contrast",
+      "_meta": {
+        "title": "LayerColor: Brightness & Contrast"
+      }
+    },
+    "551": {
+      "inputs": {
+        "images": [
+          "393",
+          0
+        ]
+      },
+      "class_type": "PreviewImage",
+      "_meta": {
+        "title": "Preview Image"
+      }
+    },
+    "566": {
+      "inputs": {
+        "x": 0,
+        "y": 0,
+        "resize_source": false,
+        "destination": [
+          "354",
+          0
+        ],
+        "source": [
+          "159",
+          0
+        ],
+        "mask": [
+          "236",
+          0
+        ]
+      },
+      "class_type": "ImageCompositeMasked",
+      "_meta": {
+        "title": "ImageCompositeMasked"
+      }
+    },
+    "568": {
+      "inputs": {
+        "images": [
+          "159",
+          0
+        ]
+      },
+      "class_type": "PreviewImage",
+      "_meta": {
+        "title": "Preview Image"
+      }
+    },
+    "575": {
+      "inputs": {
+        "rgthree_comparer": {
+          "images": [
+            {
+              "name": "A",
+              "selected": true,
+              "url": "/api/view?filename=rgthree.compare._temp_thlex_00019_.png&type=temp&subfolder=&rand=0.3914952751273102"
+            },
+            {
+              "name": "B",
+              "selected": true,
+              "url": "/api/view?filename=rgthree.compare._temp_thlex_00020_.png&type=temp&subfolder=&rand=0.5088195694978608"
+            }
+          ]
+        },
+        "image_a": [
+          "354",
+          0
+        ],
+        "image_b": [
+          "7",
+          0
+        ]
+      },
+      "class_type": "Image Comparer (rgthree)",
+      "_meta": {
+        "title": "Image Comparer (rgthree)"
+      }
+    },
+    "576": {
+      "inputs": {
+        "images": [
+          "498",
+          0
+        ]
+      },
+      "class_type": "PreviewImage",
+      "_meta": {
+        "title": "Preview Image"
+      }
+    },
+    "577": {
+      "inputs": {
+        "mask_threshold": 254,
+        "gaussblur_radius": 0,
+        "invert_mask": false,
+        "images": [
+          "393",
+          0
+        ],
+        "masks": [
+          "341",
+          0
+        ]
+      },
+      "class_type": "LamaRemover",
+      "_meta": {
+        "title": "Big lama Remover"
+      }
+    },
+    "578": {
+      "inputs": {
+        "images": [
+          "289",
+          0
+        ]
+      },
+      "class_type": "PreviewImage",
+      "_meta": {
+        "title": "Preview Image"
+      }
+    },
+    "579": {
+      "inputs": {
+        "mode": "Luminosity",
+        "blend_image": [
+          "289",
+          0
+        ],
+        "base_image": [
+          "354",
+          0
+        ]
+      },
+      "class_type": "Color Blend",
+      "_meta": {
+        "title": "Color Blend"
+      }
+    },
+    "583": {
+      "inputs": {
+        "threshold": 0.7000000000000001,
+        "torchscript_jit": "on",
+        "image": [
+          "584",
+          0
+        ]
+      },
+      "class_type": "InspyrenetRembgAdvanced",
+      "_meta": {
+        "title": "Inspyrenet Rembg Advanced"
+      }
+    },
+    "584": {
+      "inputs": {
+        "width": [
+          "3",
+          0
+        ],
+        "height": [
+          "3",
+          1
+        ],
+        "scale_option": "center",
+        "average_color": "off",
+        "fill_color": "#FFFFFF",
+        "image": [
+          "1",
+          0
+        ]
+      },
+      "class_type": "ResizeImageMixlab",
+      "_meta": {
+        "title": "Resize Image ♾️Mixlab"
+      }
+    },
+    "588": {
+      "inputs": {
+        "images": [
+          "583",
+          0
+        ]
+      },
+      "class_type": "PreviewImage",
+      "_meta": {
+        "title": "Preview Image"
+      }
+    },
+    "591": {
+      "inputs": {
+        "images": [
+          "195",
+          0
+        ]
+      },
+      "class_type": "PreviewImage",
+      "_meta": {
+        "title": "Preview Image"
+      }
+    },
+    "601": {
+      "inputs": {
+        "text": "hd quality, natural look, high contrast, surreal and expansive landscape, detailmaximizer"
+      },
+      "class_type": "CR Text",
+      "_meta": {
+        "title": "🔤 CR Text"
+      }
+    },
+    "602": {
+      "inputs": {
+        "text": "Main Visual: A cyberpunk cityscape filled with towering neon signs, futuristic skyscrapers, and flying cars. A character in a sleek cybernetic suit is walking down the bustling street with a neon-lit katana on their back. The colors are vibrant, with a glowing blue and pink palette. Top Center Text Placement: \"Enter the Neon City\" in bold, futuristic font with a glow effect. Bottom Right Text Placement: \"Explore the Future\" in smaller text next to a cyber eye or robot icon. Graphic Elements: Neon signs, digital glitch effects, and faint circuit patterns placed subtly in the background. Glowing outlines around the character and key text elements to enhance the high-tech, cyberpunk vibe.\n"
+      },
+      "class_type": "CR Text",
+      "_meta": {
+        "title": "🔤 CR Text"
+      }
+    },
+    "609": {
+      "inputs": {
+        "image": "beautiful-wedding-backdrop-with-white-flowers-greenery-perfect-romantic-elegant-wedding_14117-140890.jpg",
+        "upload": "image"
+      },
+      "class_type": "LoadImage",
+      "_meta": {
+        "title": "Load Image"
+      }
+    },
+    "612": {
+      "inputs": {
+        "width": [
+          "3",
+          0
+        ],
+        "height": [
+          "3",
+          1
+        ],
+        "interpolation": "lanczos",
+        "method": "fill / crop",
+        "condition": "always",
+        "multiple_of": 0,
+        "image": [
+          "609",
+          0
+        ]
+      },
+      "class_type": "ImageResize+",
+      "_meta": {
+        "title": "🔧 Image Resize"
+      }
+    },
+    "615": {
+      "inputs": {
+        "invert_mask": false,
+        "blend_mode": "normal",
+        "opacity": 100,
+        "x_percent": [
+          "9",
+          0
+        ],
+        "y_percent": [
+          "10",
+          0
+        ],
+        "mirror": "None",
+        "scale": [
+          "11",
+          0
+        ],
+        "aspect_ratio": 1,
+        "rotate": 0,
+        "transform_method": "lanczos",
+        "anti_aliasing": 0,
+        "background_image": [
+          "612",
+          0
+        ],
+        "layer_image": [
+          "583",
+          0
+        ]
+      },
+      "class_type": "LayerUtility: ImageBlendAdvance V2",
+      "_meta": {
+        "title": "LayerUtility: ImageBlendAdvance V2"
+      }
+    },
+    "616": {
+      "inputs": {
+        "images": [
+          "615",
+          0
+        ]
+      },
+      "class_type": "PreviewImage",
+      "_meta": {
+        "title": "Preview Image"
+      }
+    },
+    "621": {
+      "inputs": {
+        "delimiter": ", ",
+        "clean_whitespace": "true",
+        "text_a": [
+          "646",
+          0
+        ],
+        "text_b": [
+          "601",
+          0
+        ]
+      },
+      "class_type": "Text Concatenate",
+      "_meta": {
+        "title": "Text Concatenate"
+      }
+    },
+    "625": {
+      "inputs": {
+        "aspect_ratio": "16:9"
+      },
+      "class_type": "SDXLAspectRatioSelector",
+      "_meta": {
+        "title": "SDXL Aspect Ratio"
+      }
+    },
+    "626": {
+      "inputs": {
+        "text": "1344",
+        "anything": [
+          "625",
+          1
+        ]
+      },
+      "class_type": "easy showAnything",
+      "_meta": {
+        "title": "Show Any"
+      }
+    },
+    "629": {
+      "inputs": {
+        "text": "2048",
+        "anything": [
+          "3",
+          0
+        ]
+      },
+      "class_type": "easy showAnything",
+      "_meta": {
+        "title": "Show Any"
+      }
+    },
+    "630": {
+      "inputs": {
+        "text": "Please analyze the provided image and return a detailed description using the following structured format:\n\nMain Visual: Describe the central scene, including any characters, objects, or background details. Focus on the key visual elements, such as the setting, character actions, and color palette.\nTop Center Text Placement: Identify any prominent text placed in the top center of the image, noting the font style, size, effects (e.g., glow or shadow), and its relationship to the visual theme.\nBottom Right Text Placement: Describe any text or symbols in the bottom right of the image, paying attention to the size, font, style, and any accompanying graphics (e.g., icons or logos).\nGraphic Elements: Highlight any additional artistic or visual effects in the image, such as glowing edges, digital glitches, patterns, or any symbolic details that contribute to the overall style or theme (e.g., futuristic, cyberpunk, etc.).\nEnsure that the generated description maintains this structure, capturing the visual essence, text placement, and graphic elements accurately."
+      },
+      "class_type": "CR Text",
+      "_meta": {
+        "title": "🔤 CR Text"
+      }
+    },
+    "634": {
+      "inputs": {
+        "width": [
+          "625",
+          1
+        ],
+        "height": [
+          "625",
+          2
+        ],
+        "red": 125,
+        "green": 125,
+        "blue": 125
+      },
+      "class_type": "Image Blank",
+      "_meta": {
+        "title": "Image Blank"
+      }
+    },
+    "635": {
+      "inputs": {
+        "size": 2048,
+        "interpolation_mode": "bicubic",
+        "image": [
+          "634",
+          0
+        ]
+      },
+      "class_type": "JWImageResizeByLongerSide",
+      "_meta": {
+        "title": "Image Resize by Longer Side"
+      }
+    },
+    "636": {
+      "inputs": {
+        "image": [
+          "635",
+          0
+        ]
+      },
+      "class_type": "DF_Get_image_size",
+      "_meta": {
+        "title": "Get image size"
+      }
+    },
+    "640": {
+      "inputs": {
+        "prompt": [
+          "630",
+          0
+        ],
+        "max_tokens": 4096,
+        "keep_model_loaded": true,
+        "temperature": 0,
+        "seed": 837114373824667,
+        "llava_model": [
+          "641",
+          0
+        ],
+        "image": [
+          "615",
+          0
+        ]
+      },
+      "class_type": "LLaVA_OneVision_Run",
+      "_meta": {
+        "title": "LLaVA-OneVision Run"
+      }
+    },
+    "641": {
+      "inputs": {
+        "model": "lmms-lab/llava-onevision-qwen2-0.5b-ov",
+        "device": "cuda",
+        "precision": "fp16",
+        "attention": "sdpa"
+      },
+      "class_type": "DownloadAndLoadLLaVAOneVisionModel",
+      "_meta": {
+        "title": "(Down)Load LLaVA-OneVision Model"
+      }
+    },
+    "642": {
+      "inputs": {
+        "text": [
+          "640",
+          0
+        ],
+        "text2": "The image is a digital artwork depicting a ballet dancer in mid-jump, captured against a backdrop of white curtains and lush greenery. The dancer is dressed in a pink tutu with floral accents and ballet slippers, embodying the elegance and grace associated with ballet. Her hair is styled in an updo adorned with flowers, adding to her ethereal appearance.\n\nThe setting is serene and elegant, enhanced by the soft lighting that casts gentle shadows on the floor. To the left of the dancer, there are delicate white roses scattered across the floor, contributing to the overall tranquil ambiance. The background features vertical lines of sheer white fabric draped over the ceiling, creating a sense of depth and dimensionality.\n\nIn terms of text placement, the top center of the image contains a watermark or logo, which suggests the source or ownership of the artwork. Additionally, the bottom right corner includes a glowing effect, possibly indicating a digital glitch or error in the rendering process.\n\nOverall, the image conveys a sense of harmony between human form and nature, symbolized through the use of color, light, and shadow, while also capturing the fluidity and movement inherent in dance."
+      },
+      "class_type": "ShowText|pysssss",
+      "_meta": {
+        "title": "Show Text 🐍"
+      }
+    },
+    "644": {
+      "inputs": {
+        "text": "Please analyze the provided image and generate a highly detailed description based on the visual elements, focusing on its main components, colors, themes, and any prominent text or graphic elements. Include a breakdown of the environment, any key characters, specific color palettes, and the positioning of text if visible. Pay special attention to stylistic details like lighting, visual effects (e.g., glowing, neon elements), and any symbolic imagery present, and structure the prompt in a way that emphasizes a particular genre, such as cyberpunk or futuristic design"
+      },
+      "class_type": "CR Text",
+      "_meta": {
+        "title": "🔤 CR Text"
+      }
+    },
+    "645": {
+      "inputs": {
+        "preprocessor": "DepthAnythingPreprocessor",
+        "resolution": 1024,
+        "image": [
+          "7",
+          0
+        ]
+      },
+      "class_type": "AIO_Preprocessor",
+      "_meta": {
+        "title": "AIO Aux Preprocessor"
+      }
+    },
+    "646": {
+      "inputs": {
+        "text": [
+          "640",
+          0
+        ],
+        "old": "The image is",
+        "new": "ultrarealistic photo of "
+      },
+      "class_type": "Replace Text _O",
+      "_meta": {
+        "title": "Replace Text _O"
+      }
+    },
+    "647": {
+      "inputs": {
+        "text": [
+          "621",
+          0
+        ],
+        "text2": "ultrarealistic photo of  a digital artwork depicting a ballet dancer in mid-jump, captured against a backdrop of white curtains and lush greenery. The dancer is dressed in a pink tutu with floral accents and ballet slippers, embodying the elegance and grace associated with ballet. Her hair is styled in an updo adorned with flowers, adding to her ethereal appearance.\n\nThe setting is serene and elegant, enhanced by the soft lighting that casts gentle shadows on the floor. To the left of the dancer, there are delicate white roses scattered across the floor, contributing to the overall tranquil ambiance. The background features vertical lines of sheer white fabric draped over the ceiling, creating a sense of depth and dimensionality.\n\nIn terms of text placement, the top center of the image contains a watermark or logo, which suggests the source or ownership of the artwork. Additionally, the bottom right corner includes a glowing effect, possibly indicating a digital glitch or error in the rendering process.\n\nOverall, the image conveys a sense of harmony between human form and nature, symbolized through the use of color, light, and shadow, while also capturing the fluidity and movement inherent in dance., hd quality, natural look, high contrast, surreal and expansive landscape, detailmaximizer"
+      },
+      "class_type": "ShowText|pysssss",
+      "_meta": {
+        "title": "Show Text 🐍"
+      }
+    },
+    "648": {
+      "inputs": {
+        "lora_name": "xlabs_flux_realism_lora_comfui.safetensors",
+        "strength_model": 1,
+        "model": [
+          "383",
+          0
+        ]
+      },
+      "class_type": "FluxLoraLoader",
+      "_meta": {
+        "title": "Load Flux LoRA"
+      }
+    },
+    "649": {
+      "inputs": {
+        "lora_name": "flux/aidmaImageUpgrader-FLUX-V0.1.safetensors",
+        "strength_model": 1,
+        "strength_clip": 1,
+        "model": [
+          "383",
+          0
+        ],
+        "clip": [
+          "384",
+          0
+        ]
+      },
+      "class_type": "LoraLoader",
+      "_meta": {
+        "title": "Load LoRA"
+      }
+    }
+  }

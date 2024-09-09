@@ -13,8 +13,8 @@ const extractorService = new ExtractorService(mockDataService, mockDataProcessor
 
 describe('ExtractorService', () => {
   it('should extract data and save it correctly', async () => {
-    const inputFile = 'dummyInputFile.json'; // Adjust based on your mock data
-    const outputFile = 'dummyOutputFile.json';
+    const inputFile = 'examples/01-wf.json'; // Adjust based on your mock data
+    const outputFile = 'examples/01-rs.json';
 
     // Spy on fileSaver.save to verify it gets called
     const saveSpy = jest.spyOn(mockFileSaver, 'save');
