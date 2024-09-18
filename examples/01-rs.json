@@ -1,0 +1,286 @@
+{
+  "nodes": [
+    {
+      "author": "Dr.Lt.Data",
+      "title": "ComfyUI Impact Pack",
+      "id": "impact",
+      "reference": "https://github.com/ltdrdata/ComfyUI-Impact-Pack",
+      "files": [
+        "https://github.com/ltdrdata/ComfyUI-Impact-Pack"
+      ],
+      "pip": [
+        "ultralytics"
+      ],
+      "install_type": "git-clone",
+      "description": "This extension offers various detector nodes and detailer nodes that allow you to configure a workflow that automatically enhances facial details. And provide iterative upscaler.",
+      "preemptions": [
+        "SAMLoader"
+      ]
+    },
+    {
+      "author": "Dr.Lt.Data",
+      "title": "ComfyUI Inspire Pack",
+      "id": "inspire",
+      "reference": "https://github.com/ltdrdata/ComfyUI-Inspire-Pack",
+      "nodename_pattern": "Inspire$",
+      "files": [
+        "https://github.com/ltdrdata/ComfyUI-Inspire-Pack"
+      ],
+      "install_type": "git-clone",
+      "description": "This extension provides various nodes to support Lora Block Weight and the Impact Pack. Provides many easily applicable regional features and applications for Variation Seed."
+    },
+    {
+      "author": "Fannovel16",
+      "title": "ComfyUI's ControlNet Auxiliary Preprocessors",
+      "id": "comfyui_controlnet_aux",
+      "reference": "https://github.com/Fannovel16/comfyui_controlnet_aux",
+      "files": [
+        "https://github.com/Fannovel16/comfyui_controlnet_aux"
+      ],
+      "preemptions": [
+        "AIO_Preprocessor",
+        "AnimalPosePreprocessor",
+        "AnimeFace_SemSegPreprocessor",
+        "AnimeLineArtPreprocessor",
+        "BAE-NormalMapPreprocessor",
+        "BinaryPreprocessor",
+        "CannyEdgePreprocessor",
+        "ColorPreprocessor",
+        "DSINE-NormalMapPreprocessor",
+        "DWPreprocessor",
+        "DensePosePreprocessor",
+        "DepthAnythingPreprocessor",
+        "DiffusionEdge_Preprocessor",
+        "FacialPartColoringFromPoseKps",
+        "FakeScribblePreprocessor",
+        "HEDPreprocessor",
+        "HintImageEnchance",
+        "ImageGenResolutionFromImage",
+        "ImageGenResolutionFromLatent",
+        "ImageIntensityDetector",
+        "ImageLuminanceDetector",
+        "InpaintPreprocessor",
+        "LeReS-DepthMapPreprocessor",
+        "LineArtPreprocessor",
+        "LineartStandardPreprocessor",
+        "M-LSDPreprocessor",
+        "Manga2Anime_LineArt_Preprocessor",
+        "MaskOptFlow",
+        "MediaPipe-FaceMeshPreprocessor",
+        "MeshGraphormer-DepthMapPreprocessor",
+        "MiDaS-DepthMapPreprocessor",
+        "MiDaS-NormalMapPreprocessor",
+        "OneFormer-ADE20K-SemSegPreprocessor",
+        "OneFormer-COCO-SemSegPreprocessor",
+        "OpenposePreprocessor",
+        "PiDiNetPreprocessor",
+        "PixelPerfectResolution",
+        "SAMPreprocessor",
+        "SavePoseKpsAsJsonFile",
+        "ScribblePreprocessor",
+        "Scribble_XDoG_Preprocessor",
+        "SemSegPreprocessor",
+        "ShufflePreprocessor",
+        "TEEDPreprocessor",
+        "TilePreprocessor",
+        "UniFormer-SemSegPreprocessor",
+        "Unimatch_OptFlowPreprocessor",
+        "Zoe-DepthMapPreprocessor",
+        "Zoe_DepthAnythingPreprocessor"
+      ],
+      "install_type": "git-clone",
+      "description": "Plug-and-play ComfyUI node sets for making ControlNet hint images."
+    },
+    {
+      "author": "Fannovel16",
+      "title": "ComfyUI-Video-Matting",
+      "id": "video-matting",
+      "reference": "https://github.com/Fannovel16/ComfyUI-Video-Matting",
+      "files": [
+        "https://github.com/Fannovel16/ComfyUI-Video-Matting"
+      ],
+      "install_type": "git-clone",
+      "description": "A minimalistic implementation of [a/Robust Video Matting (RVM)](https://github.com/PeterL1n/RobustVideoMatting/) in ComfyUI"
+    },
+    {
+      "author": "Derfuu",
+      "title": "Derfuu_ComfyUI_ModdedNodes",
+      "id": "derfuu",
+      "reference": "https://github.com/Derfuu/Derfuu_ComfyUI_ModdedNodes",
+      "nodename_pattern": "^DF_",
+      "files": [
+        "https://github.com/Derfuu/Derfuu_ComfyUI_ModdedNodes"
+      ],
+      "install_type": "git-clone",
+      "description": "Automate calculation depending on image sizes or something you want."
+    },
+    {
+      "author": "WASasquatch",
+      "title": "WAS Node Suite",
+      "id": "was",
+      "reference": "https://github.com/WASasquatch/was-node-suite-comfyui",
+      "pip": [
+        "numba"
+      ],
+      "files": [
+        "https://github.com/WASasquatch/was-node-suite-comfyui"
+      ],
+      "install_type": "git-clone",
+      "description": "A node suite for ComfyUI with many new nodes, such as image processing, text processing, and more."
+    },
+    {
+      "author": "city96",
+      "title": "ComfyUI-GGUF",
+      "id": "gguf",
+      "reference": "https://github.com/city96/ComfyUI-GGUF",
+      "files": [
+        "https://github.com/city96/ComfyUI-GGUF"
+      ],
+      "install_type": "git-clone",
+      "description": "GGUF Quantization support for native ComfyUI models\nThis is currently very much WIP. These custom nodes provide support for model files stored in the GGUF format popularized by llama.cpp.\nWhile quantization wasn't feasible for regular UNET models (conv2d), transformer/DiT models such as flux seem less affected by quantization. This allows running it in much lower bits per weight variable bitrate quants on low-end GPUs."
+    },
+    {
+      "author": "pythongosssss",
+      "title": "pythongosssss/ComfyUI-Custom-Scripts",
+      "id": "pygos-script",
+      "reference": "https://github.com/pythongosssss/ComfyUI-Custom-Scripts",
+      "files": [
+        "https://github.com/pythongosssss/ComfyUI-Custom-Scripts"
+      ],
+      "install_type": "git-clone",
+      "description": "This extension provides: Auto Arrange Graph, Workflow SVG, Favicon Status, Image Feed, Latent Upscale By, Lock Nodes & Groups, Lora Subfolders, Preset Text, Show Text, Touch Support, Link Render Mode, Locking, Node Finder, Quick Nodes, Show Image On Menu, Show Text, Workflow Managements, Custom Widget Default Values"
+    },
+    {
+      "author": "shiimizu",
+      "title": "smZNodes",
+      "id": "smz",
+      "reference": "https://github.com/shiimizu/ComfyUI_smZNodes",
+      "files": [
+        "https://github.com/shiimizu/ComfyUI_smZNodes"
+      ],
+      "install_type": "git-clone",
+      "description": "Nodes such as CLIP Text Encode++ to achieve identical embeddings from stable-diffusion-webui for ComfyUI."
+    },
+    {
+      "author": "sipherxyz",
+      "title": "comfyui-art-venture",
+      "id": "artventure",
+      "reference": "https://github.com/sipherxyz/comfyui-art-venture",
+      "files": [
+        "https://github.com/sipherxyz/comfyui-art-venture"
+      ],
+      "install_type": "git-clone",
+      "description": "Nodes: ImagesConcat, LoadImageFromUrl, AV_UploadImage"
+    },
+    {
+      "author": "Kosinkadink",
+      "title": "ComfyUI-Advanced-ControlNet",
+      "id": "adv-cnet",
+      "reference": "https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet",
+      "files": [
+        "https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet"
+      ],
+      "install_type": "git-clone",
+      "description": "Nodes for scheduling ControlNet strength across timesteps and batched latents, as well as applying custom weights and attention masks."
+    },
+    {
+      "author": "rgthree",
+      "title": "rgthree's ComfyUI Nodes",
+      "id": "rgthree",
+      "reference": "https://github.com/rgthree/rgthree-comfy",
+      "files": [
+        "https://github.com/rgthree/rgthree-comfy"
+      ],
+      "nodename_pattern": " \\(rgthree\\)$",
+      "install_type": "git-clone",
+      "description": "Nodes: Seed, Reroute, Context, Lora Loader Stack, Context Switch, Fast Muter. These custom nodes helps organize the building of complex workflows."
+    },
+    {
+      "author": "Girish Gopaul",
+      "title": "Save Image with Generation Metadata",
+      "id": "image-saver",
+      "reference": "https://github.com/giriss/comfy-image-saver",
+      "files": [
+        "https://github.com/giriss/comfy-image-saver"
+      ],
+      "install_type": "git-clone",
+      "description": "All the tools you need to save images with their generation metadata on ComfyUI. Compatible with Civitai & Prompthero geninfo auto-detection. Works with png, jpeg and webp."
+    },
+    {
+      "author": "cubiq",
+      "title": "ComfyUI Essentials",
+      "id": "essentials",
+      "reference": "https://github.com/cubiq/ComfyUI_essentials",
+      "files": [
+        "https://github.com/cubiq/ComfyUI_essentials"
+      ],
+      "install_type": "git-clone",
+      "description": "Essential nodes that are weirdly missing from ComfyUI core. With few exceptions they are new features and not commodities. I hope this will be just a temporary repository until the nodes get included into ComfyUI."
+    },
+    {
+      "author": "kijai",
+      "title": "KJNodes for ComfyUI",
+      "id": "kjnodes",
+      "reference": "https://github.com/kijai/ComfyUI-KJNodes",
+      "files": [
+        "https://github.com/kijai/ComfyUI-KJNodes"
+      ],
+      "install_type": "git-clone",
+      "description": "Various quality of life -nodes for ComfyUI, mostly just visual stuff to improve usability."
+    },
+    {
+      "author": "chflame163",
+      "title": "ComfyUI Layer Style",
+      "id": "layerstyle",
+      "reference": "https://github.com/chflame163/ComfyUI_LayerStyle",
+      "files": [
+        "https://github.com/chflame163/ComfyUI_LayerStyle"
+      ],
+      "install_type": "git-clone",
+      "description": "A set of nodes for ComfyUI it generate image like Adobe Photoshop's Layer Style. the Drop Shadow is first completed node, and follow-up work is in progress."
+    },
+    {
+      "author": "yolain",
+      "title": "ComfyUI Easy Use",
+      "reference": "https://github.com/yolain/ComfyUI-Easy-Use",
+      "files": [
+        "https://github.com/yolain/ComfyUI-Easy-Use"
+      ],
+      "install_type": "git-clone",
+      "description": "To enhance the usability of ComfyUI, optimizations and integrations have been implemented for several commonly used nodes."
+    },
+    {
+      "author": "Crystian",
+      "title": "Crystools",
+      "id": "crytools",
+      "reference": "https://github.com/crystian/ComfyUI-Crystools",
+      "files": [
+        "https://github.com/crystian/ComfyUI-Crystools"
+      ],
+      "nodename_pattern": " \\[Crystools\\]$",
+      "install_type": "git-clone",
+      "description": "With this suit, you can see the resources monitor, progress bar & time elapsed, metadata and compare between two images, compare between two JSONs, show any value to console/display, pipes, and more!\nThis provides better nodes to load/save images, previews, etc, and see \"hidden\" data without loading a new workflow."
+    },
+    {
+      "author": "ai-shizuka",
+      "title": "ComfyUI-tbox",
+      "reference": "https://github.com/ai-shizuka/ComfyUI-tbox",
+      "files": [
+        "https://github.com/ai-shizuka/ComfyUI-tbox"
+      ],
+      "install_type": "git-clone",
+      "description": "Nodes:ImageLoader, ImageSaver, ImagesSaver, ImageResize, ImageSize."
+    },
+    {
+      "author": "lldacing",
+      "title": "ComfyUI_BiRefNet_ll",
+      "reference": "https://github.com/lldacing/ComfyUI_BiRefNet_ll",
+      "files": [
+        "https://github.com/lldacing/ComfyUI_BiRefNet_ll"
+      ],
+      "install_type": "git-clone",
+      "description": "Sync with version of BiRefNet. NODES:AutoDownloadBiRefNetModel, LoadRembgByBiRefNetModel, RembgByBiRefNet."
+    }
+  ],
+  "missingNodes": []
+}

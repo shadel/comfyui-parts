@@ -30,9 +30,9 @@ export interface IComfyUIManagerExtensionNodeMapClass {
   preemptions?: string[];
 }
 
-export type IComfyUIManagerExtensionNodeMap = Array<{
-  [k: string]: [string, IComfyUIManagerExtensionNodeMapClass];
-}>;
+export type IComfyUIManagerExtensionNodeMap = {
+  [k: string]: [string[], IComfyUIManagerExtensionNodeMapClass];
+};
 
 export interface IComfyUIManagerModelList {
   models: IComfyUIManagerModel[];

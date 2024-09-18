@@ -1,7 +1,8 @@
 import { IDataService } from "./dataServiceInterfaces";
+import { IIComfyWorkflowAPI } from "./IWorkflowAPI";
 
 export interface IDataProcessor {
-  process(data: any, dataService: IDataService): any;
+  process(data: IIComfyWorkflowAPI, dataService: IDataService): any;
 }
 
 export interface IFileSaver {
