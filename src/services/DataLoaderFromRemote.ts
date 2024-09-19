@@ -27,7 +27,7 @@ export class DataLoaderFromRemote implements IDataLoader {
             },
             models: {
               civit_model_weights: await this.fetchFileWithUrl<IDataModelList>(
-                "datas/models/civit_model_weights.json"
+                this.config.models.civit_model_weights
               ),
               extra_comfy_weights:
                 await this.fetchFileWithUrl<IComfyUIManagerModelList>(
