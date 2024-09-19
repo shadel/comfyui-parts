@@ -1,12 +1,13 @@
 {
   "name": "comfyui-parts",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
     "build": "tsc",
     "test": "jest",
-    "start": "npm run build"
+    "start": "npm run build",
+    "prepublishOnly": "npm run build"
   },
   "keywords": [],
   "author": "",
