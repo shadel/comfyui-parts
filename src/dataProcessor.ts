@@ -1,7 +1,7 @@
 import { IDataService } from "./dataServiceInterfaces";
 import { IDataProcessor } from "./interfaces";
 import { IComfyWorkflowAPIItem, IIComfyWorkflowAPI } from "./IWorkflowAPI";
-import { IDataModelResult, IMissingModelByNode } from "./nodes/IDatatype";
+import { IDataModelResult, IMissingModelByNode } from "./services/IDatatype";
 const OPTIONAL_MODELS = ["stmfnet.pth"];
 
 const MODEL_FILETYPES = [

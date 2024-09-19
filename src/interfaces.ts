@@ -1,6 +1,6 @@
 import { IDataService } from "./dataServiceInterfaces";
 import { IComfyWorkflowAPIItem, IIComfyWorkflowAPI } from "./IWorkflowAPI";
-import { IComfyUIManagerCustomNode, IDataModelResult, IMissingModelByNode } from "./nodes/IDatatype";
+import { DataType, IComfyUIManagerCustomNode, IDataModelResult, IMissingModelByNode } from "./services/IDatatype";
 
 export interface IDataProcessor {
   process(data: IIComfyWorkflowAPI, dataService: IDataService): Promise<{
@@ -13,4 +13,8 @@ export interface IDataProcessor {
 
 export interface IFileSaver {
   save(data: any, filePath: string): Promise<void>;
+}
+
+export interface IDataLoader {
+  load(): Promise<DataType>
 }

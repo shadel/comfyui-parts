@@ -1,19 +1,39 @@
-import { ExtractorService } from "./extractorService";
-import { NodeDataService } from "./nodes/nodeDataService";
-import { BrowserDataService } from "./browsers/browserDataService";
-import { NodeFileSaver } from "./nodes/nodeFileSaver";
-import { BrowserFileSaver } from "./browsers/browserFileSaver";
+import { RemoteMemoryDataService } from "./browsers/RemoteMemoryDataService";
+import { getDefaultConfig, getDefaultRemoteConfig, getRemoteConfigWithHostUrl } from "./config";
 import { DataProcessor } from "./dataProcessor";
+import { IDataService } from "./dataServiceInterfaces";
+import {
+  createExtractor,
+  createExtractorAdvance,
+  ExtractType,
+} from "./extractor";
+import { IDataLoader, IDataProcessor } from "./interfaces";
+import { FileMemoryDataService } from "./nodes/FileMemoryDataService";
+import { DataLoaderFromFile } from "./services/DataLoaderFromFile";
+import { DataLoaderFromRemote } from "./services/DataLoaderFromRemote";
+import { IDataLoaderConfig } from "./services/IDataLoaderConfig";
+import { MemoryDataService } from "./services/MemoryDataService";
 
-const isNode = typeof window === "undefined";
+function createDefaultRemoteExtractor() {
+  const config = getDefaultRemoteConfig();
+  return createExtractor(config, ExtractType.REMOTE);
+}
 
-const dataService = isNode ? new NodeDataService() : new BrowserDataService();
-const fileSaver = isNode ? new NodeFileSaver() : new BrowserFileSaver();
-const dataProcessor = new DataProcessor();
-
-const extractorService = new ExtractorService(
-  dataService,
-  dataProcessor,
-  fileSaver
-);
-export { extractorService };
+export {
+  createExtractor,
+  createExtractorAdvance,
+  getDefaultRemoteConfig,
+  createDefaultRemoteExtractor,
+  getRemoteConfigWithHostUrl,
+  getDefaultConfig,
+  IDataProcessor,
+  IDataService,
+  IDataLoader,
+  DataProcessor,
+  MemoryDataService,
+  RemoteMemoryDataService,
+  FileMemoryDataService,
+  DataLoaderFromFile,
+  DataLoaderFromRemote,
+  IDataLoaderConfig
+};

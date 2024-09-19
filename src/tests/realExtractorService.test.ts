@@ -1,5 +1,5 @@
 import { ExtractorService } from '../extractorService';
-import { NodeDataService } from '../nodes/nodeDataService';
+import { FileMemoryDataService } from '../nodes/FileMemoryDataService';
 import { NodeFileSaver } from '../nodes/nodeFileSaver';
 import { DataProcessor } from '../dataProcessor';
 import fs from "fs/promises";
@@ -10,7 +10,7 @@ async function readFile(filePath: string): Promise<string> {
   return fs.readFile(resolvedPath, "utf-8");
 }
 // Create instances of mocks
-const mockDataService = new NodeDataService();
+const mockDataService = new FileMemoryDataService();
 const mockDataProcessor = new DataProcessor();
 
 // Create instance of service to be tested

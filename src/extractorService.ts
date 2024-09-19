@@ -8,7 +8,7 @@ export class ExtractorService {
   ) {}
 
   async extractComfyuiParts(inputData: string) {
-    const dbData = await this.dataService.fetchDbData();
+    const dbData = await this.dataService.connect();
     const extractedData = await this.dataProcessor.process(JSON.parse(inputData), dbData);
     return extractedData;
   }

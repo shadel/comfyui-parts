@@ -1,63 +1,27 @@
-import fs from "fs/promises";
-import path from "path";
 import { IDataService } from "../dataServiceInterfaces";
+import { IDataLoader } from "../interfaces";
 import {
   DataType,
   IComfyUIManagerCustomNode,
-  IComfyUIManagerCustomNodeList,
   IComfyUIManagerExtensionNodeMap,
   IComfyUIManagerModel,
-  IComfyUIManagerModelList,
-  IDataModelList,
 } from "./IDatatype";
 
-export class NodeDataService implements IDataService {
+export class MemoryDataService implements IDataService {
   private _db: DataType | undefined;
   private _idxNodeMap: Map<string, string>;
   private _idxNodeList: { nodename_pattern: string; url: string }[];
   private _idxModelList: Map<string, IComfyUIManagerModel[]>;
 
-  constructor() {
+  constructor(private dataLoader: IDataLoader) {
     this._idxNodeMap = new Map();
     this._idxNodeList = [];
     this._idxModelList = new Map();
   }
 
-  async fetchDbData(): Promise<IDataService> {
+  async connect(): Promise<IDataService> {
     if (!this._db) {
-      this._db = {
-        "ComfyUI-Manager": {
-          "custom-node-list":
-            await this.fetchDbFromFile<IComfyUIManagerCustomNodeList>(
-              "datas/ComfyUI-Manager/custom-node-list.json"
-            ),
-          "extension-node-map":
-            await this.fetchDbFromFile<IComfyUIManagerExtensionNodeMap>(
-              "datas/ComfyUI-Manager/extension-node-map.json"
-            ),
-          "model-list": await this.fetchDbFromFile<IComfyUIManagerModelList>(
-            "datas/ComfyUI-Manager/model-list.json"
-          ),
-        },
-        models: {
-          civit_model_weights: await this.fetchDbFromFile<IDataModelList>(
-            "datas/models/civit_model_weights.json"
-          ),
-          extra_comfy_weights:
-            await this.fetchDbFromFile<IComfyUIManagerModelList>(
-              "datas/models/extra_comfy_weights.json"
-            ),
-          huggingface_weights: await this.fetchDbFromFile<IDataModelList>(
-            "datas/models/huggingface_weights.json"
-          ),
-          replicate_model_weights: await this.fetchDbFromFile<IDataModelList>(
-            "datas/models/replicate_model_weights.json"
-          ),
-          model_node_ignore: await this.fetchDbFromFile<string[]>(
-            "datas/models/model_node_ignore.json"
-          ),
-        },
-      };
+      this._db = await this.dataLoader.load();
     }
 
     this._idxNodeMap = this.indexNodeMap();
@@ -132,11 +96,6 @@ export class NodeDataService implements IDataService {
     }, new Map<string, IComfyUIManagerModel[]>());
 
     return nodeMapIndex;
-  }
-
-  async fetchDbFromFile<T>(fileUri: string): Promise<T> {
-    const dbPath = path.resolve(fileUri);
-    return fs.readFile(dbPath, "utf-8").then(JSON.parse);
   }
 
   async findNodeByClassType(classType: string) {

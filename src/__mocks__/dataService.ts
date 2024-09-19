@@ -1,5 +1,5 @@
 import { IDataService } from '../dataServiceInterfaces';
-import { IComfyUIManagerCustomNode, IDataModelResult } from '../nodes/IDatatype';
+import { IComfyUIManagerCustomNode, IDataModelResult } from '../services/IDatatype';
 
 export class MockDataService implements IDataService {
   getModelsByName(modelName: string): Promise<IDataModelResult[]> {
@@ -22,7 +22,7 @@ export class MockDataService implements IDataService {
   }
 
 
-  async fetchDbData(): Promise<any> {
+  async connect(): Promise<any> {
     return { dbKey: "dbValue" }; // Mock DB data
   }
 }

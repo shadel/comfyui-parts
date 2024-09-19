@@ -1,7 +1,7 @@
-import { IComfyUIManagerCustomNode, IDataModelResult } from "./nodes/IDatatype";
+import { IComfyUIManagerCustomNode, IDataModelResult } from "./services/IDatatype";
 
 export interface IDataService {
-    fetchDbData(): Promise<IDataService>;
+    connect(): Promise<IDataService>;
 
     findNodeByClassType(classType: string): Promise<string | null>;
     getNodesByUrls(urls: string[]): Promise<IComfyUIManagerCustomNode[]>;
