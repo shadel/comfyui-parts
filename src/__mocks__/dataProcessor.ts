@@ -1,7 +1,7 @@
 import { IDataProcessor } from '../interfaces';
 
 export class MockDataProcessor implements IDataProcessor {
-  process(inputData: any, dbData: any): any {
-    return { processed: true }; // Mock processing
+  async process(inputData: any, dbData: any) {
+    return { nodes: [], missingNodes: [], models: [], missingModels: [] }; // Mock processing
   }
 }

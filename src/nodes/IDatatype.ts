@@ -54,6 +54,17 @@ export interface IDataModel {
   url: string;
   dest: string;
 }
+export interface IDataModelResult {
+  url: string;
+  dest: string;
+  filename: string;
+}
+
+export interface IMissingModelByNode {
+  filename: string;
+  key: string;
+  class_type: string;
+}
 
 export type IDataModelList = {
   [k: string]: IDataModel;
@@ -70,5 +81,6 @@ export type DataType = {
     extra_comfy_weights: IComfyUIManagerModelList;
     huggingface_weights: IDataModelList;
     replicate_model_weights: IDataModelList;
+    model_node_ignore: string[];
   };
 }

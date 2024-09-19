@@ -1,8 +1,14 @@
 import { IDataService } from "./dataServiceInterfaces";
-import { IIComfyWorkflowAPI } from "./IWorkflowAPI";
+import { IComfyWorkflowAPIItem, IIComfyWorkflowAPI } from "./IWorkflowAPI";
+import { IComfyUIManagerCustomNode, IDataModelResult, IMissingModelByNode } from "./nodes/IDatatype";
 
 export interface IDataProcessor {
-  process(data: IIComfyWorkflowAPI, dataService: IDataService): any;
+  process(data: IIComfyWorkflowAPI, dataService: IDataService): Promise<{
+    nodes: IComfyUIManagerCustomNode[];
+    missingNodes: IComfyWorkflowAPIItem[];
+    models: IDataModelResult[];
+    missingModels: IMissingModelByNode[];
+}>;
 }
 
 export interface IFileSaver {

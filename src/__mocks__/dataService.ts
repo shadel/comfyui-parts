@@ -1,7 +1,13 @@
 import { IDataService } from '../dataServiceInterfaces';
-import { IComfyUIManagerCustomNode } from '../nodes/IDatatype';
+import { IComfyUIManagerCustomNode, IDataModelResult } from '../nodes/IDatatype';
 
 export class MockDataService implements IDataService {
+  getModelsByName(modelName: string): Promise<IDataModelResult[]> {
+    throw new Error('Method not implemented.');
+  }
+  checkModelNodeIgnore(classType: string): Promise<boolean> {
+    throw new Error('Method not implemented.');
+  }
   findNodeByClassType(classType: string): Promise<string | null> {
     throw new Error('Method not implemented.');
   }
@@ -14,9 +20,7 @@ export class MockDataService implements IDataService {
   getNodesByUrls(urls: string[]): Promise<IComfyUIManagerCustomNode[]> {
     throw new Error('Method not implemented.');
   }
-  async readFile(filePath: string | File): Promise<string> {
-    return '{"key": "value"}'; // Mock JSON data
-  }
+
 
   async fetchDbData(): Promise<any> {
     return { dbKey: "dbValue" }; // Mock DB data

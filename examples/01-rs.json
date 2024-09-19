@@ -282,5 +282,78 @@
       "description": "Sync with version of BiRefNet. NODES:AutoDownloadBiRefNetModel, LoadRembgByBiRefNetModel, RembgByBiRefNet."
     }
   ],
-  "missingNodes": []
+  "missingNodes": [],
+  "models": [
+    {
+      "url": "https://civitai.com/api/download/models/126470",
+      "dest": "ComfyUI/models/checkpoints",
+      "filename": "majicmixRealistic_betterV2V25.safetensors"
+    },
+    {
+      "url": "https://weights.replicate.delivery/default/comfy-ui/custom_nodes/comfyui_controlnet_aux/yolox_l.onnx.tar",
+      "dest": "ComfyUI/custom_nodes/comfyui_controlnet_aux/ckpts/yzd-v/DWPose",
+      "filename": "yolox_l.onnx"
+    },
+    {
+      "url": "https://weights.replicate.delivery/default/comfy-ui/custom_nodes/comfyui_controlnet_aux/dw-ll_ucoco_384.onnx.tar",
+      "dest": "ComfyUI/custom_nodes/comfyui_controlnet_aux/ckpts/yzd-v/DWPose",
+      "filename": "dw-ll_ucoco_384.onnx"
+    },
+    {
+      "url": "https://weights.replicate.delivery/default/comfy-ui/vae/vae-ft-mse-840000-ema-pruned.safetensors.tar",
+      "dest": "ComfyUI/models/vae",
+      "filename": "vae-ft-mse-840000-ema-pruned.safetensors"
+    },
+    {
+      "url": "https://weights.replicate.delivery/default/comfy-ui/controlnet/control_v11p_sd15_openpose.pth.tar",
+      "dest": "ComfyUI/models/controlnet",
+      "filename": "control_v11p_sd15_openpose.pth"
+    },
+    {
+      "url": "https://weights.replicate.delivery/default/comfy-ui/controlnet/control_v11p_sd15_lineart.pth.tar",
+      "dest": "ComfyUI/models/controlnet",
+      "filename": "control_v11p_sd15_lineart.pth"
+    },
+    {
+      "url": "https://weights.replicate.delivery/default/comfy-ui/controlnet/control_v11f1p_sd15_depth.pth.tar",
+      "dest": "ComfyUI/models/controlnet",
+      "filename": "control_v11f1p_sd15_depth.pth"
+    },
+    {
+      "url": "https://weights.replicate.delivery/default/comfy-ui/controlnet/control_v11p_sd15_inpaint.pth.tar",
+      "dest": "ComfyUI/models/controlnet",
+      "filename": "control_v11p_sd15_inpaint.pth"
+    },
+    {
+      "filename": "face_yolov8m-seg_60.pt",
+      "dest": "ultralytics/segm",
+      "url": "https://github.com/hben35096/assets/releases/download/yolo8/face_yolov8m-seg_60.pt"
+    },
+    {
+      "filename": "face_yolov8m.pt",
+      "dest": "ultralytics/bbox",
+      "url": "https://huggingface.co/Bingsu/adetailer/resolve/main/face_yolov8m.pt"
+    },
+    {
+      "filename": "flux1-schnell-Q8_0.gguf",
+      "dest": "diffusion_models/FLUX1",
+      "url": "https://huggingface.co/city96/FLUX.1-schnell-gguf/resolve/main/flux1-schnell-Q8_0.gguf"
+    },
+    {
+      "filename": "google_t5-v1_1-xxl_encoderonly-fp8_e4m3fn.safetensors",
+      "dest": "clip/t5",
+      "url": "https://huggingface.co/mcmonkey/google_t5-v1_1-xxl_encoderonly/resolve/main/t5xxl_fp8_e4m3fn.safetensors"
+    },
+    {
+      "filename": "clip_l.safetensors",
+      "dest": "clip",
+      "url": "https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/clip_l.safetensors"
+    },
+    {
+      "filename": "ae.safetensors",
+      "dest": "vae/FLUX1",
+      "url": "https://huggingface.co/black-forest-labs/FLUX.1-schnell/resolve/main/ae.safetensors"
+    }
+  ],
+  "missingModels": []
 }
