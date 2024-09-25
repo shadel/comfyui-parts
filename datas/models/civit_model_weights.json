@@ -6850,5 +6850,9 @@
     "Ghibli_v4.safetensors": {
         "url": "https://civitai.com/api/download/models/58596",
         "dest": "ComfyUI/models/loras"
+    },
+    "SocialMediaPostGenerator.safetensors": {
+        "url": "https://civitai.com/api/download/models/817800?type=Model&format=SafeTensor",
+        "dest": "ComfyUI/models/loras/flux"
     }
 }
