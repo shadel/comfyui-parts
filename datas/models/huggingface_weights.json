@@ -50,5 +50,9 @@
     "ip_plus_composition_sd15.safetensors":{
         "url": "https://huggingface.co/ostris/ip-composition-adapter/resolve/main/ip_plus_composition_sd15.safetensors?download=true",
         "dest": "ComfyUI/models/ipadapter/ip_plus_composition_sd15.safetensors"
+    },
+    "Mu Mu - White Silk Flower Cube Wedding Photoshoot [Available for Download for Couples]_v1.safetensors":{
+        "url": "https://huggingface.co/shadel/collections-lora-sd15/resolve/main/Mu%20Mu%20-%20White%20Silk%20Flower%20Cube%20Wedding%20Photoshoot%20%5BAvailable%20for%20Download%20for%20Couples%5D_v1.safetensors",
+        "dest": "ComfyUI/models/loras/SD1.5/style/Mu Mu - White Silk Flower Cube Wedding Photoshoot [Available for Download for Couples]_v1.safetensors"
     }
 }
