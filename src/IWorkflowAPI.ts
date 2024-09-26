@@ -1,6 +1,4 @@
-export interface IIComfyWorkflowAPI {
-    [k:string]: IComfyWorkflowAPIItem
-}
+export type IIComfyWorkflowAPI = Record<string, IComfyWorkflowAPIItem>;
 export interface IComfyWorkflowAPIItem {
     inputs:     Inputs;
     class_type: string;

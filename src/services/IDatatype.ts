@@ -30,9 +30,7 @@ export interface IComfyUIManagerExtensionNodeMapClass {
   preemptions?: string[];
 }
 
-export type IComfyUIManagerExtensionNodeMap = {
-  [k: string]: [string[], IComfyUIManagerExtensionNodeMapClass];
-};
+export type IComfyUIManagerExtensionNodeMap = Record<string, [string[], IComfyUIManagerExtensionNodeMapClass]>;
 
 export interface IComfyUIManagerModelList {
   models: IComfyUIManagerModel[];
@@ -66,9 +64,7 @@ export interface IMissingModelByNode {
   class_type: string;
 }
 
-export type IDataModelList = {
-  [k: string]: IDataModel;
-};
+export type IDataModelList = Record<string, IDataModel>;
 
 export type DataType = {
   "ComfyUI-Manager": {

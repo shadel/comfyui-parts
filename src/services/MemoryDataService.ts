@@ -69,7 +69,7 @@ export class MemoryDataService implements IDataService {
     const queryStringRemoved = fragmentRemoved.split("?")[0];
     const schemeRemoved = queryStringRemoved.split("://").pop()?.split(":").pop() || "";
 
-    if (schemeRemoved.indexOf("/") === -1) {
+    if (!schemeRemoved.includes("/")) {
         return "";
     }
 
@@ -122,7 +122,7 @@ export class MemoryDataService implements IDataService {
     return (
       this._db?.["ComfyUI-Manager"]["custom-node-list"].custom_nodes.filter(
         (node) => {
-          return node.files && node.files.some((file) => urls.includes(file));
+          return node?.files.some((file) => urls.includes(file));
         }
       ) || []
     );
@@ -190,6 +190,15 @@ export class MemoryDataService implements IDataService {
 
     return baseModel;
 }
+getModelManagerPath(dest: string) {
+  if (dest.includes("ComfyUI/")) {
+    return dest;
+  }
+  if (dest.includes("custom_nodes/") || dest.includes("models/")) {
+    return `ComfyUI/${dest}`
+  }
+  return `ComfyUI/models/${dest}`
+}
   async findModelOnManager(modelName: string, type?: string) {
     return this._idxModelList.get(modelName)?.filter(item => {
       if (type) {
@@ -198,7 +207,7 @@ export class MemoryDataService implements IDataService {
       return true;
     }).map(item => ({
       filename: item.filename,
-      dest: this.getSavePath(item.type, item.save_path),
+      dest: `${this.getModelManagerPath(this.getSavePath(item.type, item.save_path))}`,
       url: item.url
     }))
   }
