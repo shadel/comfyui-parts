@@ -194,7 +194,7 @@ getModelManagerPath(dest: string) {
   if (dest.startsWith("ComfyUI/") || dest.includes("/ComfyUI/")) {
     return dest;
   }
-  if (dest.startsWith("custom_nodes/") || dest.includes("models/")) {
+  if (dest.startsWith("custom_nodes/") || dest.startsWith("models/")) {
     return `ComfyUI/${dest}`
   }
   return `ComfyUI/models/${dest}`
