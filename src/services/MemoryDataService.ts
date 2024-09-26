@@ -191,10 +191,10 @@ export class MemoryDataService implements IDataService {
     return baseModel;
 }
 getModelManagerPath(dest: string) {
-  if (dest.includes("ComfyUI/")) {
+  if (dest.startsWith("ComfyUI/") || dest.includes("/ComfyUI/")) {
     return dest;
   }
-  if (dest.includes("custom_nodes/") || dest.includes("models/")) {
+  if (dest.startsWith("custom_nodes/") || dest.includes("models/")) {
     return `ComfyUI/${dest}`
   }
   return `ComfyUI/models/${dest}`
