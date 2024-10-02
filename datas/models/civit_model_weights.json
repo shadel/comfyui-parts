@@ -6854,5 +6854,9 @@
     "SocialMediaPostGenerator.safetensors": {
         "url": "https://civitai.com/api/download/models/817800?type=Model&format=SafeTensor",
         "dest": "ComfyUI/models/loras/flux"
+    },
+    "pailide3-000005.safetensors": {
+        "url": "https://civitai.com/api/download/models/290887?type=Model&format=SafeTensor",
+        "dest": "ComfyUI/models/loras/SD1.5/style"
     }
 }
